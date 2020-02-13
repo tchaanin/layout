@@ -1,0 +1,26 @@
+.outerBorder{
+    border: 1px solid black;
+    border-radius:3px;
+    width: 180px;
+}
+
+.midBar{
+    text-align: center;
+}
+
+.col2{
+    margin-right: 10%;
+}
+
+.col4{
+    margin-right: 10%;
+}
+
+.topBar{
+    margin-top: 5%;
+}
+
+.botBar{
+    margin-bottom: 5%;
+}
+
