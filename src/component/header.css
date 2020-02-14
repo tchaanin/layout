@@ -3,3 +3,8 @@
 .itemRigth{
     display: flex;
      justify-content: flex-end}
+
+.header{
+    position: absolute;
+    z-index: 100000;
+}

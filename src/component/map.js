@@ -16,16 +16,24 @@ export default class Map extends React.Component {
     componentDidMount() {
         this.map = L.map('map', {
             center: [58, 16],
-            zoom: 6,
+            zoom: 15,
             zoomControl: false
         });
 
         var marker = L.marker([51.5, -0.09]).addTo(this.map);
 
-        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             detectRetina: true,
             maxZoom: 20,
             maxNativeZoom: 17,
+            zIndex: 1,
+        }).addTo(this.map);
+
+        L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
+            detectRetina: true,
+            maxZoom: 20,
+            maxNativeZoom: 17,
+            zIndex: 2,
         }).addTo(this.map);
     }
 

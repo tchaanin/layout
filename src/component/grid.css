@@ -68,7 +68,6 @@
   .container{
     z-index: 1000;
     border-radius:8px;
-    border: 2px solid darkblue;
     background-color: white;
   }
 
@@ -77,4 +76,46 @@
   }
 
   
+  .top{
+    border: 2px solid black;
+    border-radius:0px !important;
+  }
 
+  .row2{
+    border-color: deepskyblue !important;
+  }
+
+  .rose1{
+    border-color: royalblue;
+  }
+
+  .rose2{
+    border-color: forestgreen
+  }
+
+  .rose3{
+    border-color: darkgreen;
+  }
+
+  .rose4{
+    border-color: slateblue;
+  }
+
+  .bot1{
+    border-color:slateblue;
+  }
+
+  .bot2{
+  border-color:steelblue;
+}
+
+.bot3{
+border-color:olive;
+}
+
+.Air{
+border-color:orange;}
+
+.Water{
+border-color:aqua;
+}
