@@ -10,6 +10,7 @@ import CardItem from './component/CardItem';
 import Prev from './component/12-prevent-collision';
 import ReactGrid from './component/reactgridlayout';
 import Circle from './component/circle';
+import Head from './component/head';
 
 
 const AppWrapper = styled.div`

@@ -91,9 +91,11 @@ export default function SwipeableTemporaryDrawer() {
     );
 
     return (
-        <div>
+        <div >
 
-            <Button onClick={toggleDrawer('right', true)}>Open Right</Button>
+            <Button onClick={toggleDrawer('right', true)}>  <i class="material-icons" >add_to_photos
+</i>
+            </Button>
 
             <SwipeableDrawer
                 open={state.left}

@@ -5,7 +5,10 @@
 }
 
 .midBar{
+    position: absolute;
     text-align: center;
+    width: 100%;
+    top: 42%;
 }
 
 .col2{
@@ -13,14 +16,27 @@
 }
 
 .col4{
-    margin-right: 10%;
+    right: 10%;
+    margin-right: 5%;
+
+}
+
+
+
+.botBar{
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+}
+
+.ContainerWrapper{
+    position: relative;
+
+height: 100%; 
+width: 100%; 
+object-fit: contain;
 }
 
 .topBar{
-    margin-top: 5%;
+    margin-top: 1%;
 }
-
-.botBar{
-    margin-bottom: 5%;
-}
-

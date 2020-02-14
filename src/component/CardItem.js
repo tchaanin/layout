@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 export default class CardItem extends Component {
     render() {
         return (
-            <div>
+            <div className="ContainerWrapper">
 
                 <div className="topBar">
                     <div class="row">

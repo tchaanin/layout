@@ -3,6 +3,10 @@ import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 import './grid.css';
 import CardItem from './CardItem';
+import CardItem2 from './CardItem2';
+import Drawerleft from './drawerleft'
+import Drawerrigth from './drawerrigth'
+
 
 
 const ReactGridLayout = WidthProvider(RGL);
@@ -61,6 +65,7 @@ export default class NoCompactingLayout extends React.PureComponent {
 
 
         return (
+
             <ReactGridLayout
                 layout={this.state.layout}
 
@@ -69,10 +74,15 @@ export default class NoCompactingLayout extends React.PureComponent {
                 {...this.props}
 
             >
+                {/*Drawer left*/}
+                <div className="drawerLeft" key="dl" data-grid={{ x: 0, y: 0, w: 1, h: 1, static: true }}><Drawerleft /></div>
+
+                {/*Drawer rigth*/}
+                <div className="drawerRigth" key="dr" data-grid={{ x: 12, y: 0, w: 1, h: 1, static: true }}><Drawerrigth /></div>
 
 
                 {/*Top container*/}
-                <div className="container top" key="i" data-grid={{ x: 5, y: 0, w: 2, h: 2 }}>iii</div>
+                <div className="container top" key="i" data-grid={{ x: 5, y: 0, w: 2, h: 2 }}><CardItem2 /></div>
 
                 {/*2. Row*/}
                 <div className="container row2" key="k" data-grid={{ x: 1, y: 1, w: 2, h: 3 }}><CardItem /></div>
@@ -113,12 +123,11 @@ export default class NoCompactingLayout extends React.PureComponent {
                 <div className="container bot1" key="r" data-grid={{ x: 9, y: 17, w: 2, h: 3 }}><CardItem /></div>
 
                 {/*Bottom container */}
-                <div className="container top" key="i2" data-grid={{ x: 5, y: 21, w: 2, h: 2 }}>i</div>
+                <div className="container top" key="i2" data-grid={{ x: 5, y: 21, w: 2, h: 2 }}><CardItem2 /></div>
 
 
                 {this.generateDOM()}
             </ReactGridLayout>
-
         );
     }
 }
