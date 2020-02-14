@@ -33,7 +33,8 @@
   }
   
   .react-grid-item.react-grid-placeholder {
-    background: red;
+    background: rgb(44, 51, 150);
+    border-radius:8px;
     opacity: 0.2;
     transition-duration: 100ms;
     z-index: 2;
@@ -67,7 +68,7 @@
   .container{
     z-index: 1000;
     border-radius:8px;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.4);
   }
 
   .layout{
@@ -81,7 +82,8 @@
   }
 
   .row2{
-    border-color: deepskyblue !important;
+    border-color: rgb(0, 191, 255);
+
   }
 
   .rose1{

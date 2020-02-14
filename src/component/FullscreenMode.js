@@ -35,7 +35,7 @@ class App extends React.Component {
                     <div
                         onClick={this.requestOrExitFullScreen.bind(this)}
                     >
-                        <Button />
+                        FullScreen
                     </div>
                 </FullScreen>
 

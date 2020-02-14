@@ -9,6 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Fullscreen from './FullscreenMode'
 
 const useStyles = makeStyles({
     list: {
@@ -44,7 +45,7 @@ export default function SwipeableTemporaryDrawer() {
             onKeyDown={toggleDrawer(side, false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {[<Fullscreen />, 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                         <ListItemText primary={text} />

@@ -11,6 +11,7 @@ import Prev from './component/12-prevent-collision';
 import ReactGrid from './component/reactgridlayout';
 import Circle from './component/circle';
 import Head from './component/head';
+import Mapdark from './component/mapdark'
 
 
 const AppWrapper = styled.div`
@@ -27,7 +28,7 @@ export default class App extends React.Component {
 
   render() {
     return (<div>
-      <Map />
+      <Mapdark />
       <ReactGrid />
     </div>
     )

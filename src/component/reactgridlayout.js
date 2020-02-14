@@ -6,6 +6,7 @@ import CardItem from './CardItem';
 import CardItem2 from './CardItem2';
 import Drawerleft from './drawerleft'
 import Drawerrigth from './drawerrigth'
+import FullScreen from './FullscreenMode'
 
 
 
