@@ -7,6 +7,13 @@ import CardItem2 from './CardItem2';
 import Drawerleft from './drawerleft'
 import Drawerrigth from './drawerrigth'
 import FullScreen from './FullscreenMode'
+import AWS from './AWS'
+import SOG from './SOG'
+import STW from './STW'
+import TWS from './TWS'
+
+
+
 
 
 
@@ -17,7 +24,7 @@ export default class NoCompactingLayout extends React.PureComponent {
         className: "layout",
         isResizable: true,
         cols: 12,
-        rowHeight: 25,
+        rowHeight: 19,
         onLayoutChange: function () { },
         // This turns off compaction so you can place items wherever.
         verticalCompact: false,
@@ -114,14 +121,14 @@ export default class NoCompactingLayout extends React.PureComponent {
                 <div className="container Air" key="g1" data-grid={{ x: 0, y: 18, w: 1, h: 2 }}>gggg</div>
 
                 {/*Compass Rose*/}
-                <div className="container rose1" key="m" data-grid={{ x: 5, y: 7, w: 2, h: 3 }}><CardItem /></div>
-                <div className="container rose2" key="n" data-grid={{ x: 4, y: 10, w: 2, h: 3 }}><CardItem /></div>
-                <div className="container rose3" key="o" data-grid={{ x: 6, y: 10, w: 2, h: 3 }}><CardItem /></div>
-                <div className="container rose4" key="p" data-grid={{ x: 5, y: 13, w: 2, h: 3 }}><CardItem /></div>
+                <div className="container rose1" key="m" data-grid={{ x: 5, y: 7, w: 2, h: 3 }}><AWS /></div>
+                <div className="container rose2" key="n" data-grid={{ x: 4, y: 10, w: 2, h: 3 }}><SOG /></div>
+                <div className="container rose3" key="o" data-grid={{ x: 6, y: 10, w: 2, h: 3 }}><TWS /></div>
+                <div className="container rose4" key="p" data-grid={{ x: 5, y: 13, w: 2, h: 3 }}><STW /></div>
 
                 {/*Bottom 2 container */}
-                <div className="container bot1" key="q" data-grid={{ x: 1, y: 17, w: 2, h: 3 }}><CardItem /></div>
-                <div className="container bot1" key="r" data-grid={{ x: 9, y: 17, w: 2, h: 3 }}><CardItem /></div>
+                <div className="container bot1" key="q" data-grid={{ x: 1, y: 17, w: 2, h: 4 }}><CardItem /></div>
+                <div className="container bot1" key="r" data-grid={{ x: 9, y: 17, w: 2, h: 4 }}><CardItem /></div>
 
                 {/*Bottom container */}
                 <div className="container top" key="i2" data-grid={{ x: 5, y: 21, w: 2, h: 2 }}><CardItem2 /></div>

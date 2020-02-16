@@ -12,7 +12,7 @@ export default class CardItem extends Component {
                 <div className="topBar">
                     <div class="row">
                         <div class="col">
-                            Target                         </div>
+                            STW                         </div>
                         <div class="col2">
                             @
                         </div>
@@ -24,7 +24,7 @@ export default class CardItem extends Component {
                 <div className="botBar">
                     <div class="row">
                         <div class="col">
-                            Target Speed                        </div>
+                            Speed thru Water                     </div>
                         <div class="col4">
                             2 of 2
                              </div>

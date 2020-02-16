@@ -12,7 +12,8 @@ import ReactGrid from './component/reactgridlayout';
 import Circle from './component/circle';
 import Head from './component/head';
 import Mapdark from './component/mapdark'
-
+import Websocket from './component/Websocket'
+import TWS from './component/TWS'
 
 const AppWrapper = styled.div`
     display: flex;
@@ -28,8 +29,8 @@ export default class App extends React.Component {
 
   render() {
     return (<div>
-      <Mapdark />
-      <ReactGrid />
+      <TWS />
+
     </div>
     )
   }

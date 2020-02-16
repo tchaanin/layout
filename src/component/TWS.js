@@ -3,8 +3,19 @@ import './CardItem.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Websocket from './Websocket';
 
 export default class CardItem extends Component {
+
+    constructor(props) {
+
+    }
+
+    updateThis() {
+        this.props.onchangeValue(this.state.value)
+    }
+
+
     render() {
         return (
             <div className="ContainerWrapper">
@@ -12,7 +23,7 @@ export default class CardItem extends Component {
                 <div className="topBar">
                     <div class="row">
                         <div class="col">
-                            Target                         </div>
+                            TWS                         </div>
                         <div class="col2">
                             @
                         </div>
@@ -24,7 +35,7 @@ export default class CardItem extends Component {
                 <div className="botBar">
                     <div class="row">
                         <div class="col">
-                            Target Speed                        </div>
+                            True Wind Speed                      </div>
                         <div class="col4">
                             2 of 2
                              </div>
