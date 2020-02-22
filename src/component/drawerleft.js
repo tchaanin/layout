@@ -45,7 +45,7 @@ export default function SwipeableTemporaryDrawer() {
             onKeyDown={toggleDrawer(side, false)}
         >
             <List>
-                {[<Fullscreen />, 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {['Dashboard', 'Logbuch', 'Wetter', 'Ankeralerm', 'Settings'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                         <ListItemText primary={text} />

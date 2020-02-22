@@ -2,7 +2,6 @@ import React from 'react'
 import FullScreen, { fullScreenSupported } from 'react-request-fullscreen'
 // import FullScreen, { fullScreenSupported } from 'react-request-fullscreen'
 import CropFreeIcon from '@material-ui/icons/CropFree';
-import Button from './button';
 
 
 class App extends React.Component {

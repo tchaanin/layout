@@ -3,7 +3,6 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css'
 import styled from 'styled-components';
 import './map.css';
-import ReactGrid from './reactgridlayout';
 
 
 const Wrapper = styled.div`

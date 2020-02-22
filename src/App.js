@@ -1,19 +1,10 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
 import './App.css';
-import MyFirstGrid from './component/MyFirstGrid';
-import Hello from './component/hello'
-import Map from './component/map';
 import styled from 'styled-components';
-import Header from './component/header';
-import CardItem from './component/CardItem';
-import Prev from './component/12-prevent-collision';
-import ReactGrid from './component/reactgridlayout';
-import Circle from './component/circle';
-import Head from './component/head';
-import Mapdark from './component/mapdark'
-import Websocket from './component/Websocket'
-import TWS from './component/TWS'
+import Mapdark from './component/darkmap'
+import Layout from './component/layout2'
+import Map from './component/map'
+import ToolboxItem from './component/ToolBoxItem'
 
 const AppWrapper = styled.div`
     display: flex;
@@ -29,7 +20,9 @@ export default class App extends React.Component {
 
   render() {
     return (<div>
-      <TWS />
+      <Map />
+      <Layout />
+
 
     </div>
     )

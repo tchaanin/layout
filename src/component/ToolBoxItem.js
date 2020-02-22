@@ -1,6 +1,8 @@
 import React from "react";
 import _ from "lodash";
 import { Responsive, WidthProvider } from "react-grid-layout";
+import './toolbox.css'
+
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 class ToolBoxItem extends React.Component {
@@ -153,18 +155,8 @@ export default class ToolboxLayout extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    Current Breakpoint: {this.state.currentBreakpoint} (
-          {this.props.cols[this.state.currentBreakpoint]} columns)
-        </div>
-                <div>
-                    Compaction type:{" "}
-                    {_.capitalize(this.state.compactType) || "No Compaction"}
-                </div>
-                <button onClick={this.onNewLayout}>Generate New Layout</button>
-                <button onClick={this.onCompactTypeChange}>
-                    Change Compaction Type
-        </button>
+
+
 
                 <ToolBox
                     items={this.state.toolbox[this.state.currentBreakpoint] || []}

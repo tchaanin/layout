@@ -1,0 +1,209 @@
+.react-grid-layout {
+    position: relative;
+    transition: height 200ms ease;
+  }
+  .react-grid-item {
+    transition: all 200ms ease;
+    transition-property: left, top;
+  }
+  .react-grid-item.cssTransforms {
+    transition-property: transform;
+  }
+  .react-grid-item.resizing {
+    z-index: 1;
+    will-change: width, height;
+  }
+  
+  .react-grid-item.react-draggable-dragging {
+    transition: none;
+    z-index: 3;
+    will-change: transform;
+  }
+  
+  .react-grid-item.dropping {
+    visibility: hidden;
+  }
+  
+  .react-grid-item.react-grid-placeholder {
+    background: rgb(44, 51, 150);
+    border-radius:8px;
+    opacity: 0.2;
+    transition-duration: 100ms;
+    z-index: 2;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  
+  .react-grid-item > .react-resizable-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+  }
+  
+  .react-grid-item > .react-resizable-handle::after {
+    content: "";
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 5px;
+    height: 5px;
+    border-right: 2px solid rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+  }
+
+
+.grid-container{
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255, 0.4);
+    z-index: 100;
+}
+
+
+.topbox {
+    color: darkblue;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;  
+}
+
+.bottombox {
+    color: darkblue;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.5);  
+}
+
+.centerbox7{
+    border-color: deepskyblue;
+}
+
+.rimbox1-1{
+    border-color: forestgreen;
+}
+
+.rimbox1-2{
+    border-color: darkgreen;
+}
+
+.rimbox1-3{
+    border-color: royalblue;
+}
+
+.rimbox1-4{
+    border-color: darkblue;
+}
+
+.rimbox2-1{
+    border-color: slateblue;
+}
+
+.rimbox2-2{
+    border-color: steelblue;
+}
+
+.rimbox2-3{
+    border-color: olive;
+}
+
+.rimbox2-4{
+    border-color: orange; 
+}
+
+.rimbox3-1{
+    border-color: forestgreen; 
+}
+
+.rimbox3-2{
+    border-color: darkgreen;
+}
+
+.rimbox3-3{
+    border-color: royalblue;
+}
+
+.rimbox3-4{
+    border-color: darkblue;
+}
+
+.rimbox4-1{
+    border-color: slateblue;
+}
+
+.rimbox4-2{
+    border-color: slateblue;
+}
+
+.rimbox4-3{
+    border-color: olive;
+}
+
+.rimbox4-4{
+    border-color: aqua;
+}
+
+.centerbox8{
+    border-color: indigo;
+}
+
+.centerbox2{
+    border-color: royalblue;
+}
+
+.centerbox3{
+    border-color: forestgreen;
+}
+
+.centerbox4{
+    border-color: darkgreen;
+}
+
+.centerbox1{
+    border-color: darkblue;
+}
+
+.centerbox5{
+    border-color: slateblue;
+}
+
+.centerbox6{
+    border-color: slateblue;
+}
+
+.textbox1{
+    z-index: 100;
+}
+
+.textbox2{
+    z-index: 100;
+}
+
+.bottombox{
+    z-index: 100;
+}
+
+.icon1{
+    z-index: 100;
+}
+
+.icon2{
+    z-index: 100;
+}
+
+.data-box-abbreviation{
+    grid-column: 1/3;
+}
+
+.data-box-aggregate{
+    grid-column: 3;
+}
+
+.data-box-icon{
+    grid-column: 4;
+}
