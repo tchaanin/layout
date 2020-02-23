@@ -2,7 +2,6 @@ import React from "react";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 import { w3cwebsocket as W3CWebSocket } from "websocket";
-import './grid.css';
 import Drawerleft from '../../drawerleft'
 import Drawerrigth from '../../drawerrigth'
 import './dashboard.css'
@@ -24,13 +23,21 @@ export default class NoCompactingLayout extends React.PureComponent {
         // This turns off rearrangement so items will not be pushed arround.
         preventCollision: true
 
-    };
+    };;
+
 
     constructor(props) {
         super(props);
-
         const layout = this.generateLayout();
-        this.state = { layout };
+        this.state = {
+            layout
+        };
+    }
+
+    toggleChange = () => {
+        this.setState({
+            isChecked: !this.state.isChecked,
+        });
     }
 
     generateDOM() {
@@ -64,6 +71,7 @@ export default class NoCompactingLayout extends React.PureComponent {
 
 
     componentDidMount() {
+        this.setState({ isChecked: true })
         client.onopen = () => {
             console.log('WebSocket Client Connected');
 
@@ -215,8 +223,16 @@ export default class NoCompactingLayout extends React.PureComponent {
         }
     }
 
+    getRoundedNumber(value) {
+        if (!isNaN(value)) {
+            value = Math.round(value * 80) / 80
+            console.log(value)
+        }
+        return value
+    }
 
     render() {
+
         return (
 
             <div className="background">
@@ -230,7 +246,12 @@ export default class NoCompactingLayout extends React.PureComponent {
 
                 >
                     {/*icon1, Drawer left*/}
-                    <div className="icon1" key="dl" data-grid={{ x: 0, y: 0, w: 1, h: 1, static: true }}><Drawerleft /></div>
+                    <div className="icon1" key="dl" data-grid={{ x: 0, y: 0, w: 1, h: 1, static: true }}>
+                        {console.log("Hallooo")}
+                        {console.log(this.state.isChecked)}
+                        <Drawerleft
+                            isChecked={this.props.isChecked}
+                            onChange={this.toggleChange} /></div>
 
                     {/*icon2, Drawer rigth*/}
                     <div className="icon2" key="dr" data-grid={{ x: 12, y: 0, w: 1, h: 1, static: true }}><Drawerrigth /></div>
@@ -315,7 +336,10 @@ export default class NoCompactingLayout extends React.PureComponent {
                     {/*rimbox1-3*/}
                     <div className="rimbox1-3 grid-container" key="g" data-grid={{ x: 0, y: 6, w: 1, h: 2 }}>SOG{this.state.speedOverGroundValue}</div>
                     {/*rimbox1-4*/}
-                    <div className="rimbox1-4 grid-container" key="h" data-grid={{ x: 0, y: 7, w: 1, h: 2 }}>STW{this.state.speedThroughWaterValue}</div>
+
+                    <div className="rimbox1-4 grid-container" key="h" data-grid={{ x: 0, y: 7, w: 1, h: 2 }}>
+                        STW{this.getRoundedNumber(this.state.speedThroughWaterValue)}
+                    </div>
 
                     {/*Rigth 4 container Top*/}
                     <div className="rimbox3-1 grid-container" key="c" data-grid={{ x: 11, y: 4, w: 1, h: 2 }}>AWS{this.state.courseOverGroundTrueValue}</div>

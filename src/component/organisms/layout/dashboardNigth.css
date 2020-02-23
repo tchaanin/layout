@@ -58,7 +58,9 @@
   }
 
 
-.grid-container{
+.grid-container-night{
+    font-size: 1em !important;
+    word-break: break-word; 
     border-style: solid;
     border-color: black;
     border-radius: 8px;

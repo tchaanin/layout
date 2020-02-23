@@ -59,6 +59,8 @@
 
 
 .grid-container{
+    font-size: 1em !important;
+    word-break: break-word; 
     border-style: solid;
     border-color: black;
     border-radius: 8px;
@@ -81,30 +83,37 @@
 }
 
 .centerbox7{
+    font-size: 1em !important;
     border-color: deepskyblue;
 }
 
 .rimbox1-1{
+    font-size: 1em !important;
     border-color: forestgreen;
 }
 
 .rimbox1-2{
+    font-size: 1em !important;
     border-color: darkgreen;
 }
 
 .rimbox1-3{
+    font-size: 1em !important;
     border-color: royalblue;
 }
 
 .rimbox1-4{
+    font-size: 1em !important;
     border-color: darkblue;
 }
 
 .rimbox2-1{
+    font-size: 1em !important;
     border-color: slateblue;
 }
 
 .rimbox2-2{
+    font-size: 1em !important;
     border-color: steelblue;
 }
 
@@ -214,4 +223,17 @@
 
 .data-box-icon{
     grid-row-end: auto;
+}
+
+.root {
+    flex-grow: 1
+  }
+
+  .paper {
+    text-align: 'center';
+  }
+
+.background{
+    width:"100%"; 
+    heigth:"100%";
 }

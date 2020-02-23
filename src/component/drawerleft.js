@@ -11,6 +11,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Fullscreen from './atom/FullscreenMode'
 
+
+
 const useStyles = makeStyles({
     list: {
         width: 250,
@@ -39,28 +41,31 @@ export default function SwipeableTemporaryDrawer() {
 
     const sideList = side => (
         <div
-            className={classes.list}
-            role="presentation"
-            onClick={toggleDrawer(side, false)}
-            onKeyDown={toggleDrawer(side, false)}
-        >
-            <List>
-                {['Dashboard', 'Logbuch', 'Wetter', 'Ankeralerm', 'Settings'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['Head-up', 'North-up', 'Wind-up', 'Course-up'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
+            className={classes.list}>
+            <div
+                role="presentation"
+                onClick={toggleDrawer(side, false)}
+                onKeyDown={toggleDrawer(side, false)}
+            >
+                <Divider />
+                <List>
+                    {['Dashboard', 'Logbuch', 'Wetter', 'Ankeralerm', 'Settings'].map((text, index) => (
+                        <ListItem button key={text}>
+                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    ))}
+                </List>
+                <Divider />
+                <List>
+                    {['Head-up', 'North-up', 'Wind-up', 'Course-up'].map((text, index) => (
+                        <ListItem button key={text}>
+                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    ))}
+                </List>
+            </div>
         </div>
     );
 
@@ -93,8 +98,8 @@ export default function SwipeableTemporaryDrawer() {
 
     return (
         <div>
-            <Button onClick={toggleDrawer('left', true)}><i class="material-icons" >add_to_photos
-</i>
+            <Button onClick={toggleDrawer('left', true)}>
+                <i class="material-icons" onClick={toggleDrawer('left', true)} >add_to_photos</i>
             </Button>
 
             <SwipeableDrawer

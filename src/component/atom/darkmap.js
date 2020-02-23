@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     heigth: ${props => props.heigth};
 `;
 
-export default class Map extends React.Component {
+export default class DarkMap extends React.Component {
 
     componentDidMount() {
         this.map = L.map('map', {
@@ -39,6 +39,6 @@ export default class Map extends React.Component {
 
     render() {
         return <div className="map"><div className="wrapper">
-            <Wrapper width="1280px" heigth="720px" id="map" /></div></div>
+            <Wrapper width="100%" heigth="100%" id="map" /></div></div>
     }
 }
