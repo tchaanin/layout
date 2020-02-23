@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Mapdark from './component/darkmap'
 import Layout from './component/layout2'
 import Map from './component/map'
-import ToolboxItem from './component/ToolBoxItem'
 
 const AppWrapper = styled.div`
     display: flex;

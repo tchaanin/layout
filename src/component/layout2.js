@@ -102,10 +102,10 @@ export default class NoCompactingLayout extends React.PureComponent {
                                 <div className="data-box-abbreviation">
                                     Target </div>
                                 <div className="data-box-aggregate">
-                                    @
+
                                 </div>
                                 <div className="data-box-icon">
-                                    @
+
                                 </div>
                                 <div>
                                     @
@@ -284,7 +284,7 @@ export default class NoCompactingLayout extends React.PureComponent {
                     <div className="centerbox6 grid-container" key="r" data-grid={{ x: 9, y: 17, w: 2, h: 4 }}>VMG {this.state.velocityMadeGoodValue}</div>
 
                     {/*bottombox*/}
-                    <div className="bottombox " key="i2" data-grid={{ x: 5, y: 21, w: 2, h: 2 }}>I bims</div>
+                    <div className="bottombox " key="i2" data-grid={{ x: 5, y: 21, w: 2, h: 2 }}>I </div>
 
 
 

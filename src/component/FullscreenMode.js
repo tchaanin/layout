@@ -34,7 +34,7 @@ class App extends React.Component {
                     <div
                         onClick={this.requestOrExitFullScreen.bind(this)}
                     >
-                        FullScreen
+                        <CropFreeIcon />
                     </div>
                 </FullScreen>
 

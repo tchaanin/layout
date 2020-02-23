@@ -6,6 +6,7 @@ import './grid.css';
 import Drawerleft from './drawerleft'
 import Drawerrigth from './drawerrigth'
 import './dashboard.css'
+import FullScreen from './FullscreenMode'
 
 const client = new W3CWebSocket('ws://demo.signalk.org/signalk/v1/stream?subscribe=none');
 
@@ -234,8 +235,10 @@ export default class NoCompactingLayout extends React.PureComponent {
                     {/*icon2, Drawer rigth*/}
                     <div className="icon2" key="dr" data-grid={{ x: 12, y: 0, w: 1, h: 1, static: true }}><Drawerrigth /></div>
 
+                    <div className="icon4" key="ic" data-grid={{ x: 12, y: 1, w: 1, h: 1, static: true }}><FullScreen /></div>
+
                     {/*textbox1, Longitude Latitude*/}
-                    <div className="textbox1" key="ll" data-grid={{ x: 3, y: 0, w: 1, h: 2, static: true }}>503242</div>
+                    <div className="textbox1" key="ll" data-grid={{ x: 3, y: 0, w: 1, h: 2, static: true }}>{this.state.dataLatitude} :: {this.state.dataLongitude}</div>
 
                     {/*Topbox*/}
                     <div className="topbox" key="i" data-grid={{ x: 5, y: 0, w: 2, h: 2 }}></div>
