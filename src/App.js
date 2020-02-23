@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './App.css';
 import styled from 'styled-components';
-import Mapdark from './component/darkmap'
-import Layout from './component/layout2'
-import Map from './component/map'
+import Mapdark from './component/atom/darkmap'
+import Layout from './component/organisms/layout/layout'
+import Map from './component/atom/map'
 
 const AppWrapper = styled.div`
     display: flex;

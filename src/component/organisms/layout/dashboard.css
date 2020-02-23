@@ -207,3 +207,11 @@
 .data-box-icon{
     grid-column: 4;
 }
+
+.icon4{
+    z-index: 100;
+}
+
+.data-box-icon{
+    grid-row-end: auto;
+}

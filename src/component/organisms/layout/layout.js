@@ -2,9 +2,11 @@ import React from "react";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 import { w3cwebsocket as W3CWebSocket } from "websocket";
-import Drawerleft from './drawerleft'
-import Drawerrigth from './drawerrigth'
+import './grid.css';
+import Drawerleft from '../../drawerleft'
+import Drawerrigth from '../../drawerrigth'
 import './dashboard.css'
+import FullScreen from '../../atom/FullscreenMode'
 
 const client = new W3CWebSocket('ws://demo.signalk.org/signalk/v1/stream?subscribe=none');
 
@@ -60,6 +62,160 @@ export default class NoCompactingLayout extends React.PureComponent {
     }
 
 
+
+    componentDidMount() {
+        client.onopen = () => {
+            console.log('WebSocket Client Connected');
+
+            var msg = { "context": "vessels.self", "subscribe": [{ "path": "*" }], "format": "delta", "policy": "instant" };
+
+            client.send(JSON.stringify(msg));
+
+        };
+
+        client.onmessage = (message) => {
+
+            const position = JSON.parse(message.data);
+
+
+            try {
+                const key = position.updates[0].source.sentence
+                const propertieName = position.updates[0].values[0].path;
+                const value = position.updates[0].values[0].value;
+
+                console.log(propertieName);
+
+
+
+
+                if (propertieName === 'navigation.speedOverGround') {
+                    console.log('gutenmorgen' + value)
+                    console.log('gutenmorgen2' + value)
+                    this.setState({ speedOverGroundValue: value })
+                    this.setState({ speedOverGroundKey: key })
+                    this.setState({ speedOverGroundName: propertieName })
+                }
+
+
+
+                if (propertieName === 'environment.depth.belowTransducer') {
+                    this.setState({ belowTransducer: value })
+                    this.setState({ belowTransducerKey: key })
+                    this.setState({ belowTransducerName: propertieName })
+                }
+
+                if (propertieName === 'environment.wind.angleTrueWater') {
+                    this.setState({ angleTrueWaterValue: value })
+                    this.setState({ angleTrueWaterKey: key })
+                    this.setState({ angleTrueWaterName: propertieName })
+                }
+
+
+                if (propertieName === 'navigation.courseRhumbline.crossTrackError') {
+                    this.setState({ crossTrackErrorValue: value })
+                    this.setState({ crossTrackErrorrKey: key })
+                    this.setState({ crossTrackErrorName: propertieName })
+                }
+
+                if (propertieName === 'performance.velocityMadeGood') {
+                    this.setState({ velocityMadeGoodValue: value })
+                    this.setState({ velocityMadeGoodKey: key })
+                    this.setState({ velocityMadeGoodName: propertieName })
+                }
+
+                if (propertieName === 'navigation.courseOverGroundTrue') {
+                    this.setState({ courseOverGroundTrueValue: value })
+                    this.setState({ courseOverGroundTrueKey: key })
+                    this.setState({ courseOverGroundTrueName: propertieName })
+                }
+
+                if (propertieName === 'environment.wind.speedTrue') {
+                    this.setState({ courseOverGroundTrueValue: value })
+                    this.setState({ courseOverGroundTrueKey: key })
+                    this.setState({ courseOverGroundTrueName: propertieName })
+                }
+
+
+                if (propertieName === 'environment.current') {
+                    this.setState({ environmentCurrentValue: value })
+                    this.setState({ environmentCurrentKey: key })
+                    this.setState({ environmentCurrentName: propertieName })
+                }
+
+
+                if (propertieName === 'navigation.speedThroughWater') {
+                    this.setState({ speedThroughWaterValue: value })
+                    this.setState({ speedThroughWaterKey: key })
+                    this.setState({ speedThroughWaterName: propertieName })
+                }
+
+
+                if (propertieName === 'navigation.courseOverGroundMagnetic') {
+                    this.setState({ courseOverGroundTrueValue: value })
+                    this.setState({ courseOverGroundTrueKey: key })
+                    this.setState({ courseOverGroundTrueName: propertieName })
+                }
+
+
+                if (propertieName === 'environment.wind.speedApparent') {
+                    this.setState({ courseOverGroundTrueValue: value })
+                    this.setState({ courseOverGroundTrueKey: key })
+                    this.setState({ courseOverGroundTrueName: propertieName })
+                }
+
+                if (propertieName === 'environment.wind.angleApparent') {
+                    this.setState({ courseOverGroundTrueValue: value })
+                    this.setState({ courseOverGroundTrueKey: key })
+                    this.setState({ courseOverGroundTrueName: propertieName })
+                }
+
+
+
+                if (key !== undefined && propertieName !== undefined && value !== undefined) {
+
+
+                    const SpeedOGround = position.updates[0].values[0].value.speedOverGround;
+                    this.setState({ propertieNamesetSpeedOGround: SpeedOGround })
+
+
+                    if (key === 'GLL') {
+                        const latitude = position.updates[0].values[0].value.latitude;
+                        const longitude = position.updates[0].values[0].value.longitude;
+                        this.setState({ propertieNameGLL: propertieName })
+                        this.setState({ dataLatitude: latitude })
+                        this.setState({ dataLongitude: longitude })
+                    } else if (key === 'VDR') {
+                        console.log('sieg')
+
+                        const setTru = position.updates[0].values[0].value.setTrue;
+                        console.log('hier' + setTru)
+
+                        const magnetic = position.updates[0].values[0].value.setMagnetic;
+                        const drift = position.updates[0].values[0].value.drift;
+
+                        this.setState({ propertieNamesetTru: setTru })
+                        this.setState({ magnetic: magnetic })
+                        this.setState({ drift: drift })
+                    }
+                }
+
+            } catch (e) {
+                console.log("YO", e)
+            }
+
+            {/*Drawer left
+            try {
+                const longitude = position.updates[0].values[0].value.longitude;
+
+
+                console.log('longitude' + longitude)
+            }*/}
+
+
+        }
+    }
+
+
     render() {
         return (
 
@@ -79,11 +235,13 @@ export default class NoCompactingLayout extends React.PureComponent {
                     {/*icon2, Drawer rigth*/}
                     <div className="icon2" key="dr" data-grid={{ x: 12, y: 0, w: 1, h: 1, static: true }}><Drawerrigth /></div>
 
+                    <div className="icon4" key="ic" data-grid={{ x: 12, y: 1, w: 1, h: 1, static: true }}><FullScreen /></div>
+
                     {/*textbox1, Longitude Latitude*/}
-                    <div className="textbox1" key="ll" data-grid={{ x: 3, y: 0, w: 1, h: 2, static: true }}>503242</div>
+                    <div className="textbox1" key="ll" data-grid={{ x: 3, y: 0, w: 1, h: 2, static: true }}>{this.state.dataLatitude} :: {this.state.dataLongitude}</div>
 
                     {/*Topbox*/}
-                    <div className="topbox" key="i" data-grid={{ x: 5, y: 0, w: 2, h: 2 }}>hallo</div>
+                    <div className="topbox" key="i" data-grid={{ x: 5, y: 0, w: 2, h: 2 }}></div>
 
                     {/*textbox2, Time*/}
                     <div className="textbox2" key="ti" data-grid={{ x: 8, y: 0, w: 1, h: 2, static: true }}>12:36:56</div>
@@ -99,15 +257,15 @@ export default class NoCompactingLayout extends React.PureComponent {
                     <div className="centerbox7 grid-container" key="k" data-grid={{ x: 1, y: 1, w: 2, h: 4 }}>  <div className="ContainerWrapper">
                         <div className="topBar">
                             <div class="row">
-                                <div className="data-box-abbreviation">
+                                <div class="col">
                                     Target </div>
-                                <div className="data-box-aggregate">
-
+                                <div class="col2">
+                                    @
                                 </div>
-                                <div className="data-box-icon">
-
+                                <div class="col3">
+                                    @
                                 </div>
-                                <div>
+                                <div class="col4">
                                     @
                                 </div>
 
@@ -144,7 +302,7 @@ export default class NoCompactingLayout extends React.PureComponent {
                                     Performance</div>
                                 <div class="col4">
                                     %
-                              </div>
+             </div>
                             </div>
                         </div>
                     </div></div>
@@ -269,7 +427,7 @@ export default class NoCompactingLayout extends React.PureComponent {
                                         Speed thru Water                     </div>
                                     <div class="col4">
                                         2 of 2
-                            </div>
+             </div>
 
                                 </div>
 
@@ -284,7 +442,7 @@ export default class NoCompactingLayout extends React.PureComponent {
                     <div className="centerbox6 grid-container" key="r" data-grid={{ x: 9, y: 17, w: 2, h: 4 }}>VMG {this.state.velocityMadeGoodValue}</div>
 
                     {/*bottombox*/}
-                    <div className="bottombox " key="i2" data-grid={{ x: 5, y: 21, w: 2, h: 2 }}>I </div>
+                    <div className="bottombox " key="i2" data-grid={{ x: 5, y: 21, w: 2, h: 2 }}></div>
 
 
 
