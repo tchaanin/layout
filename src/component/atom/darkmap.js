@@ -19,7 +19,6 @@ export default class DarkMap extends React.Component {
             zoomControl: false
         });
 
-        var marker = L.marker([51.5, -0.09]).addTo(this.map);
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             detectRetina: true,

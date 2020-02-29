@@ -56,17 +56,13 @@ export default class NoCompactingLayout extends React.PureComponent {
     generateLayout() {
         const p = this.props;
         return _.map(new Array(p.items), function (item, i) {
-            const x = i * 2 + 3
             return {
-                x: x,
-                y: 0,
-                w: 2,
-                h: 2,
-                i: i.toString()
+
             };
         });
     }
 
+    //LayoutChange
     onLayoutChange(layout) {
         this.props.onLayoutChange(layout);
     }
@@ -111,9 +107,8 @@ export default class NoCompactingLayout extends React.PureComponent {
                         </div>
 
                         {/*icon2, Drawer rigth*/}
-                        <div className="icon2" key="dr" data-grid={{ x: 12, y: 0, w: 1, h: 1, static: true }}><Drawerrigth /></div>
+                        <div className="icon2" key="dr" data-grid={{ x: 12, y: 0, w: 1, h: 1, static: true }}></div>
 
-                        <div className="icon4" key="ic" data-grid={{ x: 12, y: 1, w: 1, h: 1, static: true }}><FullScreen /></div>
 
                         {/*textbox1, Longitude Latitude*/}
                         <div className="textbox1" key="ll" data-grid={{ x: 3, y: 0, w: 1, h: 2, static: true }}>503242</div>

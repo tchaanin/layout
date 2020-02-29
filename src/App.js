@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import styled from 'styled-components';
 import Mapdark from './component/atom/DarkMap'
-import Layout from './component/organisms/layout/layout2'
+import Layout from './component/organisms/layout/layout'
 import Map from './component/atom/map'
 import DarkMap from './component/atom/DarkMap'
 import FormGroup from '@material-ui/core/FormGroup';

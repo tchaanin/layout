@@ -49,7 +49,7 @@ export default function SwipeableTemporaryDrawer() {
             >
                 <Divider />
                 <List>
-                    {['Dashboard', 'Logbuch', 'Wetter', 'Ankeralerm', 'Settings'].map((text, index) => (
+                    {['Dashboard', 'Logbuch', 'Wetter', 'Ankeralerm', <Fullscreen />, 'Settings'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                             <ListItemText primary={text} />
@@ -109,30 +109,8 @@ export default function SwipeableTemporaryDrawer() {
             >
                 {sideList('left')}
             </SwipeableDrawer>
-            <SwipeableDrawer
-                anchor="top"
-                open={state.top}
-                onClose={toggleDrawer('top', false)}
-                onOpen={toggleDrawer('top', true)}
-            >
-                {fullList('top')}
-            </SwipeableDrawer>
-            <SwipeableDrawer
-                anchor="bottom"
-                open={state.bottom}
-                onClose={toggleDrawer('bottom', false)}
-                onOpen={toggleDrawer('bottom', true)}
-            >
-                {fullList('bottom')}
-            </SwipeableDrawer>
-            <SwipeableDrawer
-                anchor="right"
-                open={state.right}
-                onClose={toggleDrawer('right', false)}
-                onOpen={toggleDrawer('right', true)}
-            >
-                {sideList('right')}
-            </SwipeableDrawer>
+
+
         </div>
     );
 }

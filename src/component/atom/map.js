@@ -19,7 +19,6 @@ export default class Map extends React.Component {
             zoomControl: false
         });
 
-        var marker = L.marker([51.5, -0.09]).addTo(this.map);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             detectRetina: true,

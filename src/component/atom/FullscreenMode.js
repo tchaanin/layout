@@ -1,7 +1,6 @@
 import React from 'react'
 import FullScreen, { fullScreenSupported } from 'react-request-fullscreen'
 // import FullScreen, { fullScreenSupported } from 'react-request-fullscreen'
-import CropFreeIcon from '@material-ui/icons/CropFree';
 
 
 class App extends React.Component {
@@ -34,7 +33,7 @@ class App extends React.Component {
                     <div
                         onClick={this.requestOrExitFullScreen.bind(this)}
                     >
-                        <CropFreeIcon />
+                        Fullscreen mode
                     </div>
                 </FullScreen>
 
