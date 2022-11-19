@@ -18,7 +18,7 @@
     "react-leaflet": "^2.6.1",
     "react-request-fullscreen": "^1.1.2",
     "react-resizable-rotatable-draggable": "^0.2.0",
-    "react-scripts": "^2.1.8",
+    "react-scripts": "^5.0.1",
     "styled-components": "^4.4.1"
   },
   "scripts": {
